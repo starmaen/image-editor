@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic",
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* خلفية شطرنجية شفافة تُظهر شفافية الصورة في المحرر */
+.checkerboard {
+  background-color: #18181b;
+  background-image:
+    linear-gradient(45deg, #27272a 25%, transparent 25%),
+    linear-gradient(-45deg, #27272a 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #27272a 75%),
+    linear-gradient(-45deg, transparent 75%, #27272a 75%);
+  background-size: 18px 18px;
+  background-position:
+    0 0,
+    0 9px,
+    9px -9px,
+    -9px 0;
+}
+
+/* شرائح التمرير */
+input[type="range"] {
+  accent-color: var(--color-indigo-500);
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+input[type="color"] {
+  cursor: pointer;
+}
+
+/* شرائح التمرير الرفيعة */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 transparent;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 9999px;
+}
+
+/* منع تحديد النص أثناء السحب على اللوحة */
+.canvas-area {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
